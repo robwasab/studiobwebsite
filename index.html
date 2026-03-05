@@ -25,14 +25,8 @@
          TIGHTER SECTION SPACING
          ========================= */
       .tm-section-pad-top {
-        padding-top: 60px !important;
-        position: relative; /* needed for soft transitions */
-      }
-
-      #pictures.tm-section-pad-top,
-      #offices.tm-section-pad-top,
-      #contact.tm-section-pad-top {
-        padding-bottom: 60px !important;
+        padding-top: 70px !important;
+        padding-bottom: 70px !important;
       }
 
       /* Make major section headings consistent with "Why Studio B Feels Different" */
@@ -62,8 +56,8 @@
       #offices .container,
       #contact .container,
       #aboutus .container {
-        padding-left: 36px;
-        padding-right: 36px;
+        padding-left: 28px;
+        padding-right: 28px;
       }
 
       #pictures .tm-testimonials-content,
@@ -85,43 +79,55 @@
       #infinite {
         position: relative;
       }
+
+      /* Cinematic overlay (subtle gradient so image still shows) */
       #infinite::before {
         content: "";
         position: absolute;
         inset: 0;
-        background: rgba(0, 0, 0, 0.22);
+        background: linear-gradient(
+          rgba(0, 0, 0, 0.28),
+          rgba(0, 0, 0, 0.18)
+        );
         z-index: 1;
       }
+
       .tm-hero-text-container {
         position: relative;
         z-index: 2;
       }
+
+      /* Premium glass panel */
       .tm-hero-text-container-inner {
-        background: rgba(0, 0, 0, 0.1);
-        padding: 32px 42px;
-        border-radius: 16px;
-        backdrop-filter: blur(3px);
-        -webkit-backdrop-filter: blur(3px);
+        background: rgba(0, 0, 0, 0.22);
+        padding: 42px 54px;
+        border-radius: 18px;
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45),
+          inset 0 0 20px rgba(255, 255, 255, 0.05);
         display: inline-block;
       }
 
       .hero-title-custom {
         font-family: "Aleo", serif;
         font-weight: 700;
-        letter-spacing: 0.015em;
-        line-height: 1.08;
-        margin-bottom: 14px;
-        text-shadow: 0 2px 18px rgba(0, 0, 0, 0.55);
+        letter-spacing: 0.02em;
+        line-height: 1.1;
+        margin-bottom: 18px;
+        text-shadow: 0 3px 22px rgba(0, 0, 0, 0.6);
       }
+
       .hero-subtitle-custom {
         font-family: "Public Sans", sans-serif;
         font-size: 1.55rem;
         font-weight: 500;
-        letter-spacing: 0.03em;
+        letter-spacing: 0.04em;
         max-width: 780px;
         margin: 0 auto;
-        line-height: 1.45;
-        text-shadow: 0 2px 18px rgba(0, 0, 0, 0.6);
+        line-height: 1.5;
+        text-shadow: 0 3px 22px rgba(0, 0, 0, 0.65);
       }
 
       .tm-hero-text-container .btn {
@@ -148,23 +154,20 @@
       #aboutus p {
         font-size: 1.15rem;
         line-height: 1.75;
-        margin-bottom: 1.4rem;
+        margin-bottom: 1.6rem;
       }
 
       #aboutus ul {
         margin-top: 10px;
-        margin-bottom: 18px;
+        margin-bottom: 24px;
         padding-left: 1.2rem;
       }
 
       #aboutus ul li {
-        margin-bottom: 10px; /* breathe a little */
+        margin-bottom: 8px;
         line-height: 1.6;
       }
 
-      /* =========================
-         ABOUT CARDS
-         ========================= */
       .about-card {
         background: rgba(255, 255, 255, 0.92);
         border-radius: 16px;
@@ -172,13 +175,56 @@
       }
 
       /* =========================
-         CTA ROW (3 buttons on one line)
+         CTA BUTTON ROW
          ========================= */
       .cta-row {
         display: flex;
         flex-wrap: wrap;
         gap: 10px;
         align-items: center;
+      }
+
+      /* =========================
+         PICTURES: GALLERY LOOK
+         ========================= */
+      .pictures-stack {
+        max-width: 980px; /* overall gallery width */
+        margin: 0 auto;
+      }
+
+      .gallery-item {
+        max-width: 860px; /* medium size: not huge, not tiny */
+        margin: 0 auto 42px auto;
+        background: rgba(255, 255, 255, 0.93);
+        border-radius: 18px;
+        padding: 16px 16px 18px 16px;
+        box-shadow: 0 10px 26px rgba(0, 0, 0, 0.10);
+      }
+
+      .gallery-title {
+        text-align: center;
+        margin: 6px 0 14px 0;
+        font-size: 1.5rem;
+      }
+
+      .gallery-carousel {
+        border-radius: 16px;
+        overflow: hidden;
+      }
+
+      /* Make images feel consistent in height */
+      #pictures .carousel-inner img {
+        height: 420px;
+        object-fit: cover;
+      }
+
+      @media (max-width: 768px) {
+        .gallery-item {
+          max-width: 100%;
+        }
+        #pictures .carousel-inner img {
+          height: 300px;
+        }
       }
 
       /* =========================
@@ -202,12 +248,13 @@
          ========================= */
       .contact-glass-panel {
         display: inline-block;
-        background: rgba(0, 0, 0, 0.12);
+        background: rgba(0, 0, 0, 0.22);
         padding: 18px 22px;
         border-radius: 14px;
-        backdrop-filter: blur(3px);
-        -webkit-backdrop-filter: blur(3px);
-        box-shadow: 0 10px 28px rgba(0, 0, 0, 0.18);
+        backdrop-filter: blur(6px);
+        -webkit-backdrop-filter: blur(6px);
+        box-shadow: 0 10px 28px rgba(0, 0, 0, 0.25);
+        border: 1px solid rgba(255, 255, 255, 0.16);
       }
 
       #contact .contact-glass-panel,
@@ -218,72 +265,11 @@
       }
 
       /* =========================
-   MAP SIZE
-   ========================= */
-.map-img {
-  width: 78%;
-  max-width: 546px;
-}
-      /* =========================
-         SOFT SECTION TRANSITIONS
+         MAP SIZE
          ========================= */
-      .tm-section-pad-top::before {
-        content: "";
-        position: absolute;
-        top: -50px;
-        left: 0;
-        width: 100%;
-        height: 50px;
-        background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
-        pointer-events: none;
-      }
-
-      .tm-section-pad-top::after {
-        content: "";
-        position: absolute;
-        bottom: -50px;
-        left: 0;
-        width: 100%;
-        height: 50px;
-        background: linear-gradient(to top, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
-        pointer-events: none;
-      }
-
-      /* =========================
-         PICTURES: VERTICAL STACK + “MEDIUM” SIZE
-         ========================= */
-      .pictures-stack {
-        max-width: 950px; /* controls overall picture size */
-        margin: 0 auto;
-      }
-
-      .pictures-block {
-        margin-bottom: 34px;
-      }
-
-      .pictures-title {
-        text-align: center;
-        margin-bottom: 10px !important;
-      }
-
-      /* keep images not huge like conference was before, but larger than the old 2-col */
-      .pictures-stack .carousel-inner img {
-        max-height: 520px;
-        object-fit: cover;
-      }
-
-      @media (max-width: 576px) {
-        #pictures .container,
-        #offices .container,
-        #contact .container,
-        #aboutus .container {
-          padding-left: 18px;
-          padding-right: 18px;
-        }
-
-        .pictures-stack .carousel-inner img {
-          max-height: 360px;
-        }
+      .map-img {
+        width: 78%;
+        max-width: 546px;
       }
     </style>
   </head>
@@ -295,7 +281,7 @@
       <nav class="navbar navbar-expand-md tm-navbar" id="tmNav">
         <div class="container">
           <div class="tm-next">
-            <a href="#infinite" class="navbar-brand">Strawberry Creek Co-Working Cooperative</a>
+            <a href="#infinite" class="navbar-brand">Strawberry Creek Cooperative</a>
           </div>
 
           <button
@@ -470,50 +456,54 @@
       </div>
     </section>
 
-    <!-- Pictures -->
+    <!-- Pictures (Gallery Style) -->
     <section id="pictures" class="tm-section-pad-top tm-parallax-2">
       <div class="container tm-testimonials-content">
         <div class="pictures-stack">
+          <!-- Park and Cafe -->
+          <div class="gallery-item">
+            <h3 class="tm-text-primary gallery-title">Park and Cafe</h3>
 
-          <!-- (1) Park and Cafe -->
-          <div class="pictures-block">
-            <div class="tm-intro-text-container">
-              <h3 class="tm-text-primary pictures-title" style="font-size: 1.5rem;">Park and Cafe</h3>
-            </div>
-
-            <div id="picture-carousel-outside" class="carousel slide" data-ride="carousel" data-interval="false">
+            <div
+              id="picture-carousel-outside"
+              class="carousel slide gallery-carousel"
+              data-ride="carousel"
+              data-interval="false"
+            >
               <ol class="carousel-indicators">
                 <li data-target="#picture-carousel-outside" data-slide-to="0" class="active"></li>
                 <li data-target="#picture-carousel-outside" data-slide-to="1"></li>
                 <li data-target="#picture-carousel-outside" data-slide-to="2"></li>
                 <li data-target="#picture-carousel-outside" data-slide-to="3"></li>
               </ol>
-              <div class="carousel-inner" style="border-radius: 20px;">
+
+              <div class="carousel-inner">
                 <div class="carousel-item active">
-                  <img class="d-block w-100" src="img/outside/hidden_cafe.JPG" alt="Park and Cafe 1" />
+                  <img class="d-block w-100" src="img/outside/hidden_cafe.JPG" alt="Park and Cafe" />
                   <div class="carousel-caption d-none d-md-block">
                     <h5>Beautiful day at the park</h5>
                   </div>
                 </div>
                 <div class="carousel-item">
-                  <img class="d-block w-100" src="img/amenities/outside-1.JPG" alt="Park and Cafe 2" />
+                  <img class="d-block w-100" src="img/amenities/outside-1.JPG" alt="Path" />
                   <div class="carousel-caption d-none d-md-block">
                     <h5>Hidden cafe walking path</h5>
                   </div>
                 </div>
                 <div class="carousel-item">
-                  <img class="d-block w-100" src="img/amenities/outside-2.JPG" alt="Park and Cafe 3" />
+                  <img class="d-block w-100" src="img/amenities/outside-2.JPG" alt="Front door view" />
                   <div class="carousel-caption d-none d-md-block">
                     <h5>Front door view</h5>
                   </div>
                 </div>
                 <div class="carousel-item">
-                  <img class="d-block w-100" src="img/amenities/outside-3.JPG" alt="Park and Cafe 4" />
+                  <img class="d-block w-100" src="img/amenities/outside-3.JPG" alt="Front door view 2" />
                   <div class="carousel-caption d-none d-md-block">
                     <h5>Another front door view</h5>
                   </div>
                 </div>
               </div>
+
               <a class="carousel-control-prev" href="#picture-carousel-outside" role="button" data-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="sr-only">Previous</span>
@@ -525,19 +515,23 @@
             </div>
           </div>
 
-          <!-- (2) Kitchen -->
-          <div class="pictures-block">
-            <div class="tm-intro-text-container">
-              <h3 class="tm-text-primary pictures-title" style="font-size: 1.5rem;">Kitchen</h3>
-            </div>
+          <!-- Kitchen -->
+          <div class="gallery-item">
+            <h3 class="tm-text-primary gallery-title">Kitchen</h3>
 
-            <div id="picture-carousel-kitchen" class="carousel slide" data-ride="carousel" data-interval="false">
+            <div
+              id="picture-carousel-kitchen"
+              class="carousel slide gallery-carousel"
+              data-ride="carousel"
+              data-interval="false"
+            >
               <ol class="carousel-indicators">
                 <li data-target="#picture-carousel-kitchen" data-slide-to="0" class="active"></li>
                 <li data-target="#picture-carousel-kitchen" data-slide-to="1"></li>
                 <li data-target="#picture-carousel-kitchen" data-slide-to="2"></li>
               </ol>
-              <div class="carousel-inner" style="border-radius: 20px;">
+
+              <div class="carousel-inner">
                 <div class="carousel-item active">
                   <img class="d-block w-100" src="img/amenities/office-kitchen-1.JPG" alt="Kitchen 1" />
                   <div class="carousel-caption d-none d-md-block">
@@ -557,6 +551,7 @@
                   </div>
                 </div>
               </div>
+
               <a class="carousel-control-prev" href="#picture-carousel-kitchen" role="button" data-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="sr-only">Previous</span>
@@ -568,20 +563,24 @@
             </div>
           </div>
 
-          <!-- (3) Conference Room -->
-          <div class="pictures-block" style="margin-bottom: 0;">
-            <div class="tm-intro-text-container">
-              <h3 class="tm-text-primary pictures-title" style="font-size: 1.5rem;">Conference Room</h3>
-            </div>
+          <!-- Conference Room -->
+          <div class="gallery-item">
+            <h3 class="tm-text-primary gallery-title">Conference Room</h3>
 
-            <div id="picture-carousel-conference" class="carousel slide" data-ride="carousel" data-interval="false">
+            <div
+              id="picture-carousel-conference"
+              class="carousel slide gallery-carousel"
+              data-ride="carousel"
+              data-interval="false"
+            >
               <ol class="carousel-indicators">
                 <li data-target="#picture-carousel-conference" data-slide-to="0" class="active"></li>
                 <li data-target="#picture-carousel-conference" data-slide-to="1"></li>
                 <li data-target="#picture-carousel-conference" data-slide-to="2"></li>
                 <li data-target="#picture-carousel-conference" data-slide-to="3"></li>
               </ol>
-              <div class="carousel-inner" style="border-radius: 20px;">
+
+              <div class="carousel-inner">
                 <div class="carousel-item active">
                   <img class="d-block w-100" src="img/office-conference/conference-door.jpg" alt="Conference 1" />
                   <div class="carousel-caption d-none d-md-block">
@@ -589,24 +588,37 @@
                   </div>
                 </div>
                 <div class="carousel-item">
-                  <img class="d-block w-100" src="img/office-conference/conference-whiteboard.jpg" alt="Conference 2" />
+                  <img
+                    class="d-block w-100"
+                    src="img/office-conference/conference-whiteboard.jpg"
+                    alt="Conference 2"
+                  />
                   <div class="carousel-caption d-none d-md-block">
                     <h5>View from window by door</h5>
                   </div>
                 </div>
                 <div class="carousel-item">
-                  <img class="d-block w-100" src="img/office-conference/conference-tv-window.jpg" alt="Conference 3" />
+                  <img
+                    class="d-block w-100"
+                    src="img/office-conference/conference-tv-window.jpg"
+                    alt="Conference 3"
+                  />
                   <div class="carousel-caption d-none d-md-block">
                     <h5>View from window by TV</h5>
                   </div>
                 </div>
                 <div class="carousel-item">
-                  <img class="d-block w-100" src="img/office-conference/conference-tv-glass.jpg" alt="Conference 4" />
+                  <img
+                    class="d-block w-100"
+                    src="img/office-conference/conference-tv-glass.jpg"
+                    alt="Conference 4"
+                  />
                   <div class="carousel-caption d-none d-md-block">
                     <h5>View from glass wall by TV</h5>
                   </div>
                 </div>
               </div>
+
               <a class="carousel-control-prev" href="#picture-carousel-conference" role="button" data-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="sr-only">Previous</span>
@@ -617,7 +629,6 @@
               </a>
             </div>
           </div>
-
         </div>
       </div>
     </section>
@@ -627,7 +638,7 @@
       <div class="container tm-testimonials-content">
         <div class="row">
           <div class="col-lg-12 col-xl-12">
-            <div class="tm-intro-text-container">
+            <div class="tm-intro-text-container text-center">
               <h2 class="tm-text-primary mb-3 tm-section-title">Available Offices</h2>
 
               Email us at:
@@ -638,6 +649,7 @@
           </div>
         </div>
 
+        <!-- Offices content unchanged -->
         <div class="row">
           <div class="col-lg-6">
             <div class="tm-intro-text-container">
@@ -651,22 +663,16 @@
               </ol>
               <div class="carousel-inner" style="border-radius: 20px;">
                 <div class="carousel-item active">
-                  <img class="d-block w-100" src="img/office-back-rear/rear-back-1.jpg" alt="Back Office 1" />
-                  <div class="carousel-caption d-none d-md-block">
-                    <h5>View from door</h5>
-                  </div>
+                  <img class="d-block w-100" src="img/office-back-rear/rear-back-1.jpg" alt="Office 1" />
+                  <div class="carousel-caption d-none d-md-block"><h5>View from door</h5></div>
                 </div>
                 <div class="carousel-item">
-                  <img class="d-block w-100" src="img/office-back-rear/rear-back-3.jpg" alt="Back Office 2" />
-                  <div class="carousel-caption d-none d-md-block">
-                    <h5>View from from far corner</h5>
-                  </div>
+                  <img class="d-block w-100" src="img/office-back-rear/rear-back-3.jpg" alt="Office 2" />
+                  <div class="carousel-caption d-none d-md-block"><h5>View from far corner</h5></div>
                 </div>
                 <div class="carousel-item">
-                  <img class="d-block w-100" src="img/office-back-rear/rear-back-4.jpg" alt="Back Office 3" />
-                  <div class="carousel-caption d-none d-md-block">
-                    <h5>Entrance</h5>
-                  </div>
+                  <img class="d-block w-100" src="img/office-back-rear/rear-back-4.jpg" alt="Office 3" />
+                  <div class="carousel-caption d-none d-md-block"><h5>Entrance</h5></div>
                 </div>
               </div>
               <a class="carousel-control-prev" href="#picture-carousel-office-back-rear" role="button" data-slide="prev">
@@ -678,7 +684,6 @@
                 <span class="sr-only">Next</span>
               </a>
             </div>
-
             <div class="tm-intro-text-container">
               <ul>
                 <li>9 x 12 working area</li>
@@ -699,22 +704,16 @@
               </ol>
               <div class="carousel-inner" style="border-radius: 20px;">
                 <div class="carousel-item active">
-                  <img class="d-block w-100" src="img/office-back-middle/rear-middle-1.jpg" alt="Middle Office 1" />
-                  <div class="carousel-caption d-none d-md-block">
-                    <h5>View from far corner</h5>
-                  </div>
+                  <img class="d-block w-100" src="img/office-back-middle/rear-middle-1.jpg" alt="Office 1" />
+                  <div class="carousel-caption d-none d-md-block"><h5>View from far corner</h5></div>
                 </div>
                 <div class="carousel-item">
-                  <img class="d-block w-100" src="img/office-back-middle/rear-middle-2.jpg" alt="Middle Office 2" />
-                  <div class="carousel-caption d-none d-md-block">
-                    <h5>View from from door</h5>
-                  </div>
+                  <img class="d-block w-100" src="img/office-back-middle/rear-middle-2.jpg" alt="Office 2" />
+                  <div class="carousel-caption d-none d-md-block"><h5>View from door</h5></div>
                 </div>
                 <div class="carousel-item">
-                  <img class="d-block w-100" src="img/office-back-middle/rear-middle-3.jpg" alt="Middle Office 3" />
-                  <div class="carousel-caption d-none d-md-block">
-                    <h5>Another view from door</h5>
-                  </div>
+                  <img class="d-block w-100" src="img/office-back-middle/rear-middle-3.jpg" alt="Office 3" />
+                  <div class="carousel-caption d-none d-md-block"><h5>Another view from door</h5></div>
                 </div>
               </div>
               <a class="carousel-control-prev" href="#picture-carousel-office-back-middle" role="button" data-slide="prev">
@@ -752,27 +751,19 @@
               <div class="carousel-inner" style="border-radius: 20px;">
                 <div class="carousel-item active">
                   <img class="d-block w-100" src="img/office-cube/office-cube1.jpg" alt="Cube 1" />
-                  <div class="carousel-caption d-none d-md-block">
-                    <h5>View from side</h5>
-                  </div>
+                  <div class="carousel-caption d-none d-md-block"><h5>View from side</h5></div>
                 </div>
                 <div class="carousel-item">
                   <img class="d-block w-100" src="img/office-cube/office-cube2.jpg" alt="Cube 2" />
-                  <div class="carousel-caption d-none d-md-block">
-                    <h5>Front view</h5>
-                  </div>
+                  <div class="carousel-caption d-none d-md-block"><h5>Front view</h5></div>
                 </div>
                 <div class="carousel-item">
                   <img class="d-block w-100" src="img/office-cube/office-cube3.jpg" alt="Cube 3" />
-                  <div class="carousel-caption d-none d-md-block">
-                    <h5>Another side view</h5>
-                  </div>
+                  <div class="carousel-caption d-none d-md-block"><h5>Another side view</h5></div>
                 </div>
                 <div class="carousel-item">
                   <img class="d-block w-100" src="img/office-cube/office-cube4.jpg" alt="Cube 4" />
-                  <div class="carousel-caption d-none d-md-block">
-                    <h5>From inside</h5>
-                  </div>
+                  <div class="carousel-caption d-none d-md-block"><h5>From inside</h5></div>
                 </div>
               </div>
               <a class="carousel-control-prev" href="#picture-carousel-office-cube" role="button" data-slide="prev">
@@ -829,7 +820,11 @@
 
         <div class="row mt-3">
           <a href="https://maps.app.goo.gl/cXHnHJNPY5eTGm8L6" class="mx-auto" target="_blank">
-            <img src="img/googlemaps-screenshot.png" class="img-fluid rounded mx-auto d-block map-img" alt="Map" />
+            <img
+              src="img/googlemaps-screenshot.png"
+              class="img-fluid rounded mx-auto d-block map-img"
+              alt="Map"
+            />
           </a>
         </div>
 
@@ -849,60 +844,6 @@
     <script src="js/bootstrap.min.js"></script>
 
     <script>
-      function getOffSet() {
-        var _offset = 450;
-        var windowHeight = window.innerHeight;
-
-        if (windowHeight > 500) _offset = 400;
-        if (windowHeight > 680) _offset = 300;
-        if (windowHeight > 830) _offset = 210;
-
-        return _offset;
-      }
-
-      function setParallaxPosition($doc, multiplier, $object) {
-        var offset = getOffSet();
-        var from_top = $doc.scrollTop(),
-          bg_css = "center " + (multiplier * from_top - offset) + "px";
-        $object.css({ "background-position": bg_css });
-      }
-
-      var background_image_parallax = function ($object, multiplier, forceSet) {
-        multiplier = typeof multiplier !== "undefined" ? multiplier : 0.5;
-        multiplier = 1 - multiplier;
-        var $doc = $(document);
-
-        if (forceSet) {
-          setParallaxPosition($doc, multiplier, $object);
-        } else {
-          var last_scroll_y = $doc.scrollTop();
-
-          $(window).scroll(function () {
-            last_scroll_y = $doc.scrollTop();
-            setParallaxPosition($doc, multiplier, $object);
-          });
-        }
-      };
-
-      var background_image_parallax_2 = function ($object, multiplier) {
-        multiplier = typeof multiplier !== "undefined" ? multiplier : 0.5;
-        multiplier = 1 - multiplier;
-        $object.css({ "background-attachment": "fixed" });
-
-        $(window).scroll(function () {
-          if ($(window).width() > 768) {
-            var firstTop = $object.offsetTop,
-              pos = $(window).scrollTop(),
-              yPos = Math.round(multiplier * (firstTop - pos) - 186);
-
-            var bg_css = "center " + yPos + "px";
-            $object.css({ "background-position": bg_css });
-          } else {
-            $object.css({ "background-position": "center" });
-          }
-        });
-      };
-
       $(function () {
         $(window).scroll(function () {
           if ($(document).scrollTop() > 120) $(".tm-navbar").addClass("scroll");
