@@ -25,12 +25,14 @@
          TIGHTER SECTION SPACING
          ========================= */
       .tm-section-pad-top {
-        padding-top: 70px !important;
+        padding-top: 60px !important;
+        position: relative; /* needed for soft transitions */
       }
+
       #pictures.tm-section-pad-top,
       #offices.tm-section-pad-top,
       #contact.tm-section-pad-top {
-        padding-bottom: 70px !important;
+        padding-bottom: 60px !important;
       }
 
       /* Make major section headings consistent with "Why Studio B Feels Different" */
@@ -60,8 +62,8 @@
       #offices .container,
       #contact .container,
       #aboutus .container {
-        padding-left: 28px;
-        padding-right: 28px;
+        padding-left: 36px;
+        padding-right: 36px;
       }
 
       #pictures .tm-testimonials-content,
@@ -99,6 +101,7 @@
         padding: 32px 42px;
         border-radius: 16px;
         backdrop-filter: blur(3px);
+        -webkit-backdrop-filter: blur(3px);
         display: inline-block;
       }
 
@@ -139,151 +142,150 @@
         }
       }
 
-    /* =========================
-   ABOUT: READABILITY + LIST
-   ========================= */
+      /* =========================
+         ABOUT: READABILITY + LIST
+         ========================= */
+      #aboutus p {
+        font-size: 1.15rem;
+        line-height: 1.75;
+        margin-bottom: 1.4rem;
+      }
 
-#aboutus p {
-  font-size: 1.15rem;
-  line-height: 1.75;
-  margin-bottom: 1.6rem;
-}
+      #aboutus ul {
+        margin-top: 10px;
+        margin-bottom: 18px;
+        padding-left: 1.2rem;
+      }
 
-#aboutus ul {
-  margin-top: 10px;
-  margin-bottom: 24px;
-  padding-left: 1.2rem;
-}
+      #aboutus ul li {
+        margin-bottom: 10px; /* breathe a little */
+        line-height: 1.6;
+      }
 
-#aboutus ul li {
-  margin-bottom: 8px;
-  line-height: 1.6;
-}
+      /* =========================
+         ABOUT CARDS
+         ========================= */
+      .about-card {
+        background: rgba(255, 255, 255, 0.92);
+        border-radius: 16px;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+      }
 
-/* =========================
-   ABOUT CARDS
-   ========================= */
+      /* =========================
+         CTA ROW (3 buttons on one line)
+         ========================= */
+      .cta-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        align-items: center;
+      }
 
-.about-card {
-  background: rgba(255,255,255,0.92);
-  border-radius: 16px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-}
+      /* =========================
+         CAROUSEL CONTROLS
+         ========================= */
+      .carousel-control-prev-icon,
+      .carousel-control-next-icon {
+        width: 50px;
+        height: 50px;
+      }
 
-/* =========================
-   SECTION SPACING
-   ========================= */
+      /* =========================
+         TEXT SHADOW
+         ========================= */
+      .text-shadow {
+        text-shadow: 2px 2px 2px #333;
+      }
 
-.tm-section-pad-top {
-  padding-top: 60px !important;
-}
+      /* =========================
+         CONTACT GLASS PANEL
+         ========================= */
+      .contact-glass-panel {
+        display: inline-block;
+        background: rgba(0, 0, 0, 0.12);
+        padding: 18px 22px;
+        border-radius: 14px;
+        backdrop-filter: blur(3px);
+        -webkit-backdrop-filter: blur(3px);
+        box-shadow: 0 10px 28px rgba(0, 0, 0, 0.18);
+      }
 
-#pictures,
-#offices,
-#contact {
-  padding-top: 50px !important;
-}
+      #contact .contact-glass-panel,
+      #contact .contact-glass-panel h2,
+      #contact .contact-glass-panel p {
+        color: #ffffff;
+        text-shadow: 0 2px 14px rgba(0, 0, 0, 0.55);
+      }
 
-/* =========================
-   CAROUSEL CONTROLS
-   ========================= */
+      /* =========================
+         MAP SIZE REDUCTION
+         ========================= */
+      .map-img {
+        width: 60%;
+        max-width: 420px;
+      }
 
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-  width: 50px;
-  height: 50px;
-}
+      /* =========================
+         SOFT SECTION TRANSITIONS
+         ========================= */
+      .tm-section-pad-top::before {
+        content: "";
+        position: absolute;
+        top: -50px;
+        left: 0;
+        width: 100%;
+        height: 50px;
+        background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
+        pointer-events: none;
+      }
 
-/* =========================
-   TEXT SHADOW
-   ========================= */
+      .tm-section-pad-top::after {
+        content: "";
+        position: absolute;
+        bottom: -50px;
+        left: 0;
+        width: 100%;
+        height: 50px;
+        background: linear-gradient(to top, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
+        pointer-events: none;
+      }
 
-.text-shadow {
-  text-shadow: 2px 2px 2px #333;
-}
+      /* =========================
+         PICTURES: VERTICAL STACK + “MEDIUM” SIZE
+         ========================= */
+      .pictures-stack {
+        max-width: 950px; /* controls overall picture size */
+        margin: 0 auto;
+      }
 
-/* =========================
-   CONTACT GLASS PANEL
-   ========================= */
+      .pictures-block {
+        margin-bottom: 34px;
+      }
 
-.contact-glass-panel {
-  display: inline-block;
-  background: rgba(0,0,0,0.12);
-  padding: 18px 22px;
-  border-radius: 14px;
-  backdrop-filter: blur(3px);
-  -webkit-backdrop-filter: blur(3px);
-  box-shadow: 0 10px 28px rgba(0,0,0,0.18);
-}
+      .pictures-title {
+        text-align: center;
+        margin-bottom: 10px !important;
+      }
 
-#contact .contact-glass-panel,
-#contact .contact-glass-panel h2,
-#contact .contact-glass-panel p {
-  color: #fff;
-  text-shadow: 0 2px 14px rgba(0,0,0,0.55);
-}
+      /* keep images not huge like conference was before, but larger than the old 2-col */
+      .pictures-stack .carousel-inner img {
+        max-height: 520px;
+        object-fit: cover;
+      }
 
-/* =========================
-   MAP SIZE REDUCTION
-   ========================= */
+      @media (max-width: 576px) {
+        #pictures .container,
+        #offices .container,
+        #contact .container,
+        #aboutus .container {
+          padding-left: 18px;
+          padding-right: 18px;
+        }
 
-.map-img {
-  width: 60%;
-  max-width: 420px;
-}
-
-/* =========================
-   CONTACT GLASS PANEL
-   ========================= */
-
-.contact-glass-panel {
-  display: inline-block;
-  background: rgba(0,0,0,0.12);
-  padding: 18px 22px;
-  border-radius: 14px;
-  backdrop-filter: blur(3px);
-  -webkit-backdrop-filter: blur(3px);
-  box-shadow: 0 10px 28px rgba(0,0,0,0.18);
-}
-
-#contact .contact-glass-panel,
-#contact .contact-glass-panel h2,
-#contact .contact-glass-panel p {
-  color: #ffffff;
-  text-shadow: 0 2px 14px rgba(0,0,0,0.55);
-}
-
-/* =========================
-   SOFT SECTION TRANSITIONS
-   ========================= */
-
-.tm-section-pad-top {
-  position: relative;
-}
-
-.tm-section-pad-top::before {
-  content: "";
-  position: absolute;
-  top: -60px;
-  left: 0;
-  width: 100%;
-  height: 60px;
-  background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,1));
-  pointer-events: none;
-}
-
-.tm-section-pad-top::after {
-  content: "";
-  position: absolute;
-  bottom: -60px;
-  left: 0;
-  width: 100%;
-  height: 60px;
-  background: linear-gradient(to top, rgba(255,255,255,0), rgba(255,255,255,1));
-  pointer-events: none;
-}
-
-</style>
+        .pictures-stack .carousel-inner img {
+          max-height: 360px;
+        }
+      }
     </style>
   </head>
 
@@ -406,7 +408,6 @@
               <div class="row mt-4">
                 <!-- FEATURES COLUMN -->
                 <div class="col-12 col-lg-6 mb-4 mb-lg-0">
-                  <!-- Removed h-100 so the box ends at the last bullet item -->
                   <div class="p-4 about-card">
                     <h3 class="tm-text-primary mb-3" style="font-size: 1.6rem;">Features</h3>
 
@@ -455,7 +456,6 @@
                 is intentionally intimate, and once members settle in, they rarely leave.
               </p>
 
-              <!-- All three buttons on one line -->
               <div class="cta-row mt-2">
                 <a href="#offices" class="btn btn-outline-primary">View Available Offices</a>
                 <a href="#contact" class="btn btn-primary">Schedule a Visit</a>
@@ -474,19 +474,12 @@
     <!-- Pictures -->
     <section id="pictures" class="tm-section-pad-top tm-parallax-2">
       <div class="container tm-testimonials-content">
-        <div class="row">
-          <div class="col-lg-12 col-xl-12">
-            <div class="tm-intro-text-container">
-              <h2 class="tm-text-primary mb-4 tm-section-title">Pictures</h2>
-            </div>
-          </div>
-        </div>
+        <div class="pictures-stack">
 
-        <!-- Top row: Outside + Kitchen -->
-        <div class="row">
-          <div class="col-lg-6">
+          <!-- (1) Park and Cafe -->
+          <div class="pictures-block">
             <div class="tm-intro-text-container">
-              <h3 class="tm-text-primary mb-3" style="font-size: 1.5rem;">Outside</h3>
+              <h3 class="tm-text-primary pictures-title" style="font-size: 1.5rem;">Park and Cafe</h3>
             </div>
 
             <div id="picture-carousel-outside" class="carousel slide" data-ride="carousel" data-interval="false">
@@ -498,25 +491,25 @@
               </ol>
               <div class="carousel-inner" style="border-radius: 20px;">
                 <div class="carousel-item active">
-                  <img class="d-block w-100" src="img/outside/hidden_cafe.JPG" alt="First slide" />
+                  <img class="d-block w-100" src="img/outside/hidden_cafe.JPG" alt="Park and Cafe 1" />
                   <div class="carousel-caption d-none d-md-block">
                     <h5>Beautiful day at the park</h5>
                   </div>
                 </div>
                 <div class="carousel-item">
-                  <img class="d-block w-100" src="img/amenities/outside-1.JPG" alt="Second slide" />
+                  <img class="d-block w-100" src="img/amenities/outside-1.JPG" alt="Park and Cafe 2" />
                   <div class="carousel-caption d-none d-md-block">
                     <h5>Hidden cafe walking path</h5>
                   </div>
                 </div>
                 <div class="carousel-item">
-                  <img class="d-block w-100" src="img/amenities/outside-2.JPG" alt="Third slide" />
+                  <img class="d-block w-100" src="img/amenities/outside-2.JPG" alt="Park and Cafe 3" />
                   <div class="carousel-caption d-none d-md-block">
                     <h5>Front door view</h5>
                   </div>
                 </div>
                 <div class="carousel-item">
-                  <img class="d-block w-100" src="img/amenities/outside-3.JPG" alt="Fourth slide" />
+                  <img class="d-block w-100" src="img/amenities/outside-3.JPG" alt="Park and Cafe 4" />
                   <div class="carousel-caption d-none d-md-block">
                     <h5>Another front door view</h5>
                   </div>
@@ -533,9 +526,10 @@
             </div>
           </div>
 
-          <div class="col-lg-6">
+          <!-- (2) Kitchen -->
+          <div class="pictures-block">
             <div class="tm-intro-text-container">
-              <h3 class="tm-text-primary mb-3" style="font-size: 1.5rem;">Kitchen</h3>
+              <h3 class="tm-text-primary pictures-title" style="font-size: 1.5rem;">Kitchen</h3>
             </div>
 
             <div id="picture-carousel-kitchen" class="carousel slide" data-ride="carousel" data-interval="false">
@@ -546,19 +540,19 @@
               </ol>
               <div class="carousel-inner" style="border-radius: 20px;">
                 <div class="carousel-item active">
-                  <img class="d-block w-100" src="img/amenities/office-kitchen-1.JPG" alt="First slide" />
+                  <img class="d-block w-100" src="img/amenities/office-kitchen-1.JPG" alt="Kitchen 1" />
                   <div class="carousel-caption d-none d-md-block">
                     <h5>Kitchen with back facing front door</h5>
                   </div>
                 </div>
                 <div class="carousel-item">
-                  <img class="d-block w-100" src="img/amenities/office-kitchen-2.JPG" alt="Second slide" />
+                  <img class="d-block w-100" src="img/amenities/office-kitchen-2.JPG" alt="Kitchen 2" />
                   <div class="carousel-caption d-none d-md-block">
                     <h5>View of conference room from kitchen</h5>
                   </div>
                 </div>
                 <div class="carousel-item">
-                  <img class="d-block w-100" src="img/amenities/office-kitchen-3.JPG" alt="Third slide" />
+                  <img class="d-block w-100" src="img/amenities/office-kitchen-3.JPG" alt="Kitchen 3" />
                   <div class="carousel-caption d-none d-md-block">
                     <h5>Another view of conference room from kitchen</h5>
                   </div>
@@ -574,64 +568,57 @@
               </a>
             </div>
           </div>
-        </div>
 
-        <!-- Conference centered under the first row -->
-        <div class="pictures-gap-tight"></div>
+          <!-- (3) Conference Room -->
+          <div class="pictures-block" style="margin-bottom: 0;">
+            <div class="tm-intro-text-container">
+              <h3 class="tm-text-primary pictures-title" style="font-size: 1.5rem;">Conference Room</h3>
+            </div>
 
-        <div class="row">
-          <div class="col-12">
-            <div class="pictures-conference-wrap">
-              <div class="tm-intro-text-container">
-                <h3 class="tm-text-primary mb-3 pictures-conference-title" style="font-size: 1.5rem;">
-                  Conference Room
-                </h3>
-              </div>
-
-              <div id="picture-carousel-conference" class="carousel slide" data-ride="carousel" data-interval="false">
-                <ol class="carousel-indicators">
-                  <li data-target="#picture-carousel-conference" data-slide-to="0" class="active"></li>
-                  <li data-target="#picture-carousel-conference" data-slide-to="1"></li>
-                  <li data-target="#picture-carousel-conference" data-slide-to="2"></li>
-                  <li data-target="#picture-carousel-conference" data-slide-to="3"></li>
-                </ol>
-                <div class="carousel-inner" style="border-radius: 20px;">
-                  <div class="carousel-item active">
-                    <img class="d-block w-100" src="img/office-conference/conference-door.jpg" alt="First slide" />
-                    <div class="carousel-caption d-none d-md-block">
-                      <h5>View from door</h5>
-                    </div>
-                  </div>
-                  <div class="carousel-item">
-                    <img class="d-block w-100" src="img/office-conference/conference-whiteboard.jpg" alt="Second slide" />
-                    <div class="carousel-caption d-none d-md-block">
-                      <h5>View from window by door</h5>
-                    </div>
-                  </div>
-                  <div class="carousel-item">
-                    <img class="d-block w-100" src="img/office-conference/conference-tv-window.jpg" alt="Third slide" />
-                    <div class="carousel-caption d-none d-md-block">
-                      <h5>View from window by TV</h5>
-                    </div>
-                  </div>
-                  <div class="carousel-item">
-                    <img class="d-block w-100" src="img/office-conference/conference-tv-glass.jpg" alt="Fourth slide" />
-                    <div class="carousel-caption d-none d-md-block">
-                      <h5>View from glass wall by TV</h5>
-                    </div>
+            <div id="picture-carousel-conference" class="carousel slide" data-ride="carousel" data-interval="false">
+              <ol class="carousel-indicators">
+                <li data-target="#picture-carousel-conference" data-slide-to="0" class="active"></li>
+                <li data-target="#picture-carousel-conference" data-slide-to="1"></li>
+                <li data-target="#picture-carousel-conference" data-slide-to="2"></li>
+                <li data-target="#picture-carousel-conference" data-slide-to="3"></li>
+              </ol>
+              <div class="carousel-inner" style="border-radius: 20px;">
+                <div class="carousel-item active">
+                  <img class="d-block w-100" src="img/office-conference/conference-door.jpg" alt="Conference 1" />
+                  <div class="carousel-caption d-none d-md-block">
+                    <h5>View from door</h5>
                   </div>
                 </div>
-                <a class="carousel-control-prev" href="#picture-carousel-conference" role="button" data-slide="prev">
-                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                  <span class="sr-only">Previous</span>
-                </a>
-                <a class="carousel-control-next" href="#picture-carousel-conference" role="button" data-slide="next">
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                  <span class="sr-only">Next</span>
-                </a>
+                <div class="carousel-item">
+                  <img class="d-block w-100" src="img/office-conference/conference-whiteboard.jpg" alt="Conference 2" />
+                  <div class="carousel-caption d-none d-md-block">
+                    <h5>View from window by door</h5>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100" src="img/office-conference/conference-tv-window.jpg" alt="Conference 3" />
+                  <div class="carousel-caption d-none d-md-block">
+                    <h5>View from window by TV</h5>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100" src="img/office-conference/conference-tv-glass.jpg" alt="Conference 4" />
+                  <div class="carousel-caption d-none d-md-block">
+                    <h5>View from glass wall by TV</h5>
+                  </div>
+                </div>
               </div>
+              <a class="carousel-control-prev" href="#picture-carousel-conference" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="carousel-control-next" href="#picture-carousel-conference" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+              </a>
             </div>
           </div>
+
         </div>
       </div>
     </section>
@@ -652,7 +639,6 @@
           </div>
         </div>
 
-        <!-- (Offices section content unchanged below) -->
         <div class="row">
           <div class="col-lg-6">
             <div class="tm-intro-text-container">
@@ -666,19 +652,19 @@
               </ol>
               <div class="carousel-inner" style="border-radius: 20px;">
                 <div class="carousel-item active">
-                  <img class="d-block w-100" src="img/office-back-rear/rear-back-1.jpg" alt="First slide" />
+                  <img class="d-block w-100" src="img/office-back-rear/rear-back-1.jpg" alt="Back Office 1" />
                   <div class="carousel-caption d-none d-md-block">
                     <h5>View from door</h5>
                   </div>
                 </div>
                 <div class="carousel-item">
-                  <img class="d-block w-100" src="img/office-back-rear/rear-back-3.jpg" alt="Second slide" />
+                  <img class="d-block w-100" src="img/office-back-rear/rear-back-3.jpg" alt="Back Office 2" />
                   <div class="carousel-caption d-none d-md-block">
                     <h5>View from from far corner</h5>
                   </div>
                 </div>
                 <div class="carousel-item">
-                  <img class="d-block w-100" src="img/office-back-rear/rear-back-4.jpg" alt="Third slide" />
+                  <img class="d-block w-100" src="img/office-back-rear/rear-back-4.jpg" alt="Back Office 3" />
                   <div class="carousel-caption d-none d-md-block">
                     <h5>Entrance</h5>
                   </div>
@@ -714,19 +700,19 @@
               </ol>
               <div class="carousel-inner" style="border-radius: 20px;">
                 <div class="carousel-item active">
-                  <img class="d-block w-100" src="img/office-back-middle/rear-middle-1.jpg" alt="First slide" />
+                  <img class="d-block w-100" src="img/office-back-middle/rear-middle-1.jpg" alt="Middle Office 1" />
                   <div class="carousel-caption d-none d-md-block">
                     <h5>View from far corner</h5>
                   </div>
                 </div>
                 <div class="carousel-item">
-                  <img class="d-block w-100" src="img/office-back-middle/rear-middle-2.jpg" alt="Second slide" />
+                  <img class="d-block w-100" src="img/office-back-middle/rear-middle-2.jpg" alt="Middle Office 2" />
                   <div class="carousel-caption d-none d-md-block">
                     <h5>View from from door</h5>
                   </div>
                 </div>
                 <div class="carousel-item">
-                  <img class="d-block w-100" src="img/office-back-middle/rear-middle-3.jpg" alt="Third slide" />
+                  <img class="d-block w-100" src="img/office-back-middle/rear-middle-3.jpg" alt="Middle Office 3" />
                   <div class="carousel-caption d-none d-md-block">
                     <h5>Another view from door</h5>
                   </div>
@@ -766,25 +752,25 @@
               </ol>
               <div class="carousel-inner" style="border-radius: 20px;">
                 <div class="carousel-item active">
-                  <img class="d-block w-100" src="img/office-cube/office-cube1.jpg" alt="First slide" />
+                  <img class="d-block w-100" src="img/office-cube/office-cube1.jpg" alt="Cube 1" />
                   <div class="carousel-caption d-none d-md-block">
                     <h5>View from side</h5>
                   </div>
                 </div>
                 <div class="carousel-item">
-                  <img class="d-block w-100" src="img/office-cube/office-cube2.jpg" alt="Second slide" />
+                  <img class="d-block w-100" src="img/office-cube/office-cube2.jpg" alt="Cube 2" />
                   <div class="carousel-caption d-none d-md-block">
                     <h5>Front view</h5>
                   </div>
                 </div>
                 <div class="carousel-item">
-                  <img class="d-block w-100" src="img/office-cube/office-cube3.jpg" alt="Third slide" />
+                  <img class="d-block w-100" src="img/office-cube/office-cube3.jpg" alt="Cube 3" />
                   <div class="carousel-caption d-none d-md-block">
                     <h5>Another side view</h5>
                   </div>
                 </div>
                 <div class="carousel-item">
-                  <img class="d-block w-100" src="img/office-cube/office-cube4.jpg" alt="Fourth slide" />
+                  <img class="d-block w-100" src="img/office-cube/office-cube4.jpg" alt="Cube 4" />
                   <div class="carousel-caption d-none d-md-block">
                     <h5>From inside</h5>
                   </div>
@@ -811,59 +797,50 @@
       </div>
     </section>
 
-<!-- Contact -->
-<section id="contact" class="tm-section-pad-top tm-parallax-2">
-  <div class="container tm-container-contact">
-
-    <!-- Glass headline block (this MUST be inside a row) -->
-    <div class="row">
-      <div class="text-center col-12">
-        <div class="contact-glass-panel">
-          <h2 class="tm-section-title mb-3">Contact Us</h2>
-          <p class="mb-2">Our mission is to help creators succeed.</p>
-          <p class="mb-0">Contact us and we'll work together to create the best space for all of us.</p>
+    <!-- Contact -->
+    <section id="contact" class="tm-section-pad-top tm-parallax-2">
+      <div class="container tm-container-contact">
+        <div class="row">
+          <div class="text-center col-12">
+            <div class="contact-glass-panel">
+              <h2 class="tm-section-title mb-3">Contact Us</h2>
+              <p class="mb-2">Our mission is to help creators succeed.</p>
+              <p class="mb-0">Contact us and we'll work together to create the best space for all of us.</p>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
 
-    <!-- Contact links -->
-    <div class="row mt-4">
-      <div class="col-sm-12 col-md-12">
-        <div class="contact-item">
-          <a rel="nofollow" href="mailto:sbc@studiob.coop" class="item-link">
-            <i class="far fa-2x fa-envelope mr-4"></i>
-            <span class="mb-0"><b>sbc@studiob.coop</b></span>
+        <div class="row mt-4">
+          <div class="col-sm-12 col-md-12">
+            <div class="contact-item">
+              <a rel="nofollow" href="mailto:sbc@studiob.coop" class="item-link">
+                <i class="far fa-2x fa-envelope mr-4"></i>
+                <span class="mb-0"><b>sbc@studiob.coop</b></span>
+              </a>
+            </div>
+
+            <div class="contact-item">
+              <a rel="nofollow" href="https://maps.app.goo.gl/72PzpcmoT6ke6gxL9" class="item-link">
+                <i class="fas fa-2x fa-map-marker-alt mr-4"></i>
+                <span class="mb-0">Our Location</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="row mt-3">
+          <a href="https://maps.app.goo.gl/cXHnHJNPY5eTGm8L6" class="mx-auto" target="_blank">
+            <img src="img/googlemaps-screenshot.png" class="img-fluid rounded mx-auto d-block map-img" alt="Map" />
           </a>
         </div>
 
-        <div class="contact-item">
-          <a rel="nofollow" href="https://maps.app.goo.gl/72PzpcmoT6ke6gxL9" class="item-link">
-            <i class="fas fa-2x fa-map-marker-alt mr-4"></i>
-            <span class="mb-0">Our Location</span>
-          </a>
-        </div>
+        <div style="height: 18px;"></div>
+
+        <footer class="text-center small tm-footer">
+          <p class="mb-0">Copyright &copy; 2026 Studio B Cooperative</p>
+        </footer>
       </div>
-    </div>
-
-    <!-- Map image -->
-    <div class="row mt-3">
-      <a href="https://maps.app.goo.gl/cXHnHJNPY5eTGm8L6" class="mx-auto" target="_blank">
-        <img
-          src="img/googlemaps-screenshot.png"
-          class="img-fluid rounded mx-auto d-block map-img"
-          alt="Map"
-        />
-      </a>
-    </div>
-
-    <div style="height: 18px;"></div>
-
-    <footer class="text-center small tm-footer">
-      <p class="mb-0">Copyright &copy; 2026 Studio B Cooperative</p>
-    </footer>
-
-  </div>
-</section>
+    </section>
 
     <script src="js/jquery-1.9.1.min.js"></script>
     <script src="slick/slick.min.js"></script>
