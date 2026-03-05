@@ -139,79 +139,98 @@
         }
       }
 
-      /* =========================
-         ABOUT: READABILITY + LIST
-         ========================= */
-      #aboutus p {
-        font-size: 1.15rem;
-        line-height: 1.75;
-        margin-bottom: 1.25rem;
-      }
+    /* =========================
+   ABOUT: READABILITY + LIST
+   ========================= */
 
-      /* Bullet list breathes a little */
-      #aboutus ul {
-        margin-top: 10px;
-        margin-bottom: 20px;
-        padding-left: 1.15rem;
-      }
-      #aboutus ul li {
-        margin: 6px 0;
-        line-height: 1.5;
-      }
+#aboutus p {
+  font-size: 1.15rem;
+  line-height: 1.75;
+  margin-bottom: 1.6rem;
+}
 
-      .about-card {
-        background: rgba(255, 255, 255, 0.9);
-        border-radius: 16px;
-        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
-      }
+#aboutus ul {
+  margin-top: 10px;
+  margin-bottom: 24px;
+  padding-left: 1.2rem;
+}
 
-      /* Buttons all on one line */
-      .cta-row {
-        display: flex;
-        gap: 10px;
-        flex-wrap: wrap;
-        align-items: center;
-      }
+#aboutus ul li {
+  margin-bottom: 8px;
+  line-height: 1.6;
+}
 
-      /* =========================
-         CAROUSEL CONTROLS
-         ========================= */
-      .carousel-control-prev-icon,
-      .carousel-control-next-icon {
-        width: 50px;
-        height: 50px;
-      }
+/* =========================
+   ABOUT CARDS
+   ========================= */
 
-      /* =========================
-         PICTURES: CENTER CONFERENCE
-         ========================= */
-      .pictures-conference-wrap {
-        max-width: 760px;
-        margin: 0 auto;
-      }
-      .pictures-conference-title {
-        text-align: center;
-      }
-      .pictures-gap-tight {
-        margin-top: 22px;
-      }
+.about-card {
+  background: rgba(255,255,255,0.92);
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+}
 
-      /* =========================
-         CONTACT: MAP SIZE
-         ========================= */
-      .map-img {
-        max-width: 60%; /* 40% smaller than before */
-        height: auto;
-      }
-      @media (max-width: 768px) {
-        .map-img {
-          max-width: 100%;
-        }
-      }
+/* =========================
+   SECTION SPACING
+   ========================= */
 
-      .text-shadow {
-        text-shadow: 2px 2px 2px #333;
-      }
+.tm-section-pad-top {
+  padding-top: 60px !important;
+}
+
+#pictures,
+#offices,
+#contact {
+  padding-top: 50px !important;
+}
+
+/* =========================
+   CAROUSEL CONTROLS
+   ========================= */
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  width: 50px;
+  height: 50px;
+}
+
+/* =========================
+   TEXT SHADOW
+   ========================= */
+
+.text-shadow {
+  text-shadow: 2px 2px 2px #333;
+}
+
+/* =========================
+   CONTACT GLASS PANEL
+   ========================= */
+
+.contact-glass-panel {
+  display: inline-block;
+  background: rgba(0,0,0,0.12);
+  padding: 18px 22px;
+  border-radius: 14px;
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  box-shadow: 0 10px 28px rgba(0,0,0,0.18);
+}
+
+#contact .contact-glass-panel,
+#contact .contact-glass-panel h2,
+#contact .contact-glass-panel p {
+  color: #fff;
+  text-shadow: 0 2px 14px rgba(0,0,0,0.55);
+}
+
+/* =========================
+   MAP SIZE REDUCTION
+   ========================= */
+
+.map-img {
+  width: 60%;
+  max-width: 420px;
+}
     </style>
   </head>
 
@@ -739,51 +758,59 @@
       </div>
     </section>
 
-    <!-- Contact -->
-   <div class="text-center col-12">
-  <div class="contact-glass-panel">
-    <h2 class="tm-section-title mb-3">Contact Us</h2>
+<!-- Contact -->
+<section id="contact" class="tm-section-pad-top tm-parallax-2">
+  <div class="container tm-container-contact">
 
-    <p class="mb-2">Our mission is to help creators succeed.</p>
-    <p class="mb-0">Contact us and we'll work together to create the best space for all of us.</p>
-  </div>
-</div>
-
-        <div class="row">
-          <div class="col-sm-12 col-md-12">
-            <div class="contact-item">
-              <a rel="nofollow" href="mailto:sbc@studiob.coop" class="item-link">
-                <i class="far fa-2x fa-envelope mr-4"></i>
-                <span class="mb-0"><b> sbc@studiob.coop </b></span>
-              </a>
-            </div>
-
-            <div class="contact-item">
-              <a rel="nofollow" href="https://maps.app.goo.gl/72PzpcmoT6ke6gxL9" class="item-link">
-                <i class="fas fa-2x fa-map-marker-alt mr-4"></i>
-                <span class="mb-0">Our Location</span>
-              </a>
-            </div>
-          </div>
+    <!-- Glass headline block (this MUST be inside a row) -->
+    <div class="row">
+      <div class="text-center col-12">
+        <div class="contact-glass-panel">
+          <h2 class="tm-section-title mb-3">Contact Us</h2>
+          <p class="mb-2">Our mission is to help creators succeed.</p>
+          <p class="mb-0">Contact us and we'll work together to create the best space for all of us.</p>
         </div>
+      </div>
+    </div>
 
-        <div class="row mt-3">
-          <a href="https://maps.app.goo.gl/cXHnHJNPY5eTGm8L6" class="mx-auto" target="_blank">
-            <img
-              src="img/googlemaps-screenshot.png"
-              class="img-fluid rounded mx-auto d-block map-img"
-              alt="Map"
-            />
+    <!-- Contact links -->
+    <div class="row mt-4">
+      <div class="col-sm-12 col-md-12">
+        <div class="contact-item">
+          <a rel="nofollow" href="mailto:sbc@studiob.coop" class="item-link">
+            <i class="far fa-2x fa-envelope mr-4"></i>
+            <span class="mb-0"><b>sbc@studiob.coop</b></span>
           </a>
         </div>
 
-        <div style="height: 18px;"></div>
-
-        <footer class="text-center small tm-footer">
-          <p class="mb-0">Copyright &copy; 2026 Studio B Cooperative</p>
-        </footer>
+        <div class="contact-item">
+          <a rel="nofollow" href="https://maps.app.goo.gl/72PzpcmoT6ke6gxL9" class="item-link">
+            <i class="fas fa-2x fa-map-marker-alt mr-4"></i>
+            <span class="mb-0">Our Location</span>
+          </a>
+        </div>
       </div>
-    </section>
+    </div>
+
+    <!-- Map image -->
+    <div class="row mt-3">
+      <a href="https://maps.app.goo.gl/cXHnHJNPY5eTGm8L6" class="mx-auto" target="_blank">
+        <img
+          src="img/googlemaps-screenshot.png"
+          class="img-fluid rounded mx-auto d-block map-img"
+          alt="Map"
+        />
+      </a>
+    </div>
+
+    <div style="height: 18px;"></div>
+
+    <footer class="text-center small tm-footer">
+      <p class="mb-0">Copyright &copy; 2026 Studio B Cooperative</p>
+    </footer>
+
+  </div>
+</section>
 
     <script src="js/jquery-1.9.1.min.js"></script>
     <script src="slick/slick.min.js"></script>
